@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>secondDate</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/seconddate-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=2">
+<style>
+  main { text-align: center; padding-top: 12vh; }
+  .back { display: inline-block; margin-top: 24px; padding: 16px 32px; border-radius: 999px;
+          background: var(--signal); color: #fff; font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+<img src="assets/seconddate-icon.png" alt="" width="80" height="80" style="border-radius:20px">
+<h1 lang="de">Fertig</h1>
+<p class="lead" lang="de">Zurück zur App – dort siehst du das Ergebnis.</p>
+<p class="muted" lang="en">Done. Back to the app to see the result.</p>
+<a class="back" id="back" href="intent://verify-callback#Intent;scheme=ch.brunodev.seconddate;package=ch.brunodev.seconddate;end">Zurück zu secondDate</a>
+</main>
+<script>
+  // Android browsers open the app from a tap; try once right away as well.
+  var link = document.getElementById('back');
+  if (!/Android/i.test(navigator.userAgent)) link.href = 'ch.brunodev.seconddate://verify-callback';
+  setTimeout(function () { location.href = link.href; }, 300);
+</script>
+</body>
+</html>
